@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="graphqlnow.schema.class">HellFiveDay\GraphQLNowBundle\GraphQL\Schema</parameter>
+        <parameter key="graphqlnow.query.orm.query_type.class">HellFiveDay\GraphQLNowBundle\GraphQL\Query\ORMQueryType</parameter>
+        <parameter key="graphqlnow.mutation.orm.mutation_type.class">HellFiveDay\GraphQLNowBundle\GraphQL\Mutation\ORMMutationType</parameter>
+    </parameters>
+
+    <services>
+        <service id="graphql.schema" class="%graphqlnow.schema.class%">
+            <argument type="service" id="graphqlnow.query.orm.query_type" />
+            <argument type="service" id="graphqlnow.mutation.orm.mutation_type" />
+        </service>
+
+        <service id="graphqlnow.query.orm.query_type" class="%graphqlnow.query.orm.query_type.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+
+        <service id="graphqlnow.mutation.orm.mutation_type" class="%graphqlnow.mutation.orm.mutation_type.class%">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+    </services>
+</container>

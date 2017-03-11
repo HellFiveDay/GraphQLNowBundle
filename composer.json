@@ -1,0 +1,11 @@
+{
+    "name": "hellfiveday/graph-ql-now-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thibaut Cholley",
+            "email": "cholley.thibaut@gmail.com"
+        }
+    ],
+    "require": {}
+}
