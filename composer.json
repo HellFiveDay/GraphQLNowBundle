@@ -7,5 +7,15 @@
             "email": "cholley.thibaut@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.5",
+        "doctrine/orm": "~2.4",
+        "doctrine/doctrine-bundle": "~1.2",
+        "youshido/graphql-bundle": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "HellFiveDay\\GraphQLNowBundle\\": "src"
+        }
+    }
 }
